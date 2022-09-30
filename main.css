@@ -1,0 +1,72 @@
+.card {
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+  color: aliceblue;
+  text-align: center;
+  border: 1px solid black;
+  transform-style: preserve-3d;
+  transform: rotateZ(0deg);
+  transition: ease-in-out 0.3s;
+  display: table-cell;
+  vertical-align: middle;
+}
+.card:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  top: -0.7em;
+  right: 0;
+  transform: rotate(0deg);
+  background-color: rgb(0, 34, 119);
+}
+
+.card:hover {
+  transform: rotate3d(1, 1, 0, 90deg);
+}
+
+.rets {
+  position: relative;
+  color: red;
+  -webkit-animation: card 1s linear infinite;
+          animation: card 1s linear infinite;
+  margin: 2em;
+}
+
+@-webkit-keyframes card {
+  0% {
+    transform: rotateX(60deg);
+    transform-style: preserve-3d;
+  }
+  70% {
+    transform: none;
+  }
+}
+
+@keyframes card {
+  0% {
+    transform: rotateX(60deg);
+    transform-style: preserve-3d;
+  }
+  70% {
+    transform: none;
+  }
+}
+body {
+  position: relative;
+  margin-left: 60px;
+  border: 1px solid blue;
+  perspective: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.main {
+  padding: 0.5em;
+  background-color: aquamarine;
+  display: flex;
+  align-self: flex-start;
+  margin: 2em;
+}/*# sourceMappingURL=main.css.map */
