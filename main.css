@@ -61,6 +61,7 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  background-color: black;
 }
 
 .main {
@@ -69,4 +70,61 @@ body {
   display: flex;
   align-self: flex-start;
   margin: 2em;
+}
+
+.time-main {
+  position: relative;
+  color: hsl(345deg, 95%, 68%);
+  height: 100px;
+  border-radius: 0.2em;
+  font-size: 5rem;
+  background-color: hsl(236deg, 21%, 26%);
+  width: 100px;
+  text-align: center;
+  padding: 0.2em;
+  overflow: hidden;
+  margin: 10px;
+}
+.time-main::after, .time-main::before {
+  content: "";
+  background-color: black;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  position: absolute;
+  border-radius: 0.2em;
+}
+.time-main::after {
+  right: -5px;
+}
+.time-main::before {
+  left: -5px;
+}
+.time-main .time-main > span {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.time-main .top {
+  z-index: 3;
+  background-color: hsl(235deg, 16%, 14%);
+  transform-origin: 50% 100%;
+  position: absolute;
+}
+.time-main .bottom {
+  z-index: 1;
+  position: absolute;
+}
+.time-main .top-back, .time-main .bottom-back {
+  z-index: 2;
+  top: 0;
+  position: absolute;
+  height: 50%;
+}
+.time-main .top-back span, .time-main .bottom-back span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }/*# sourceMappingURL=main.css.map */

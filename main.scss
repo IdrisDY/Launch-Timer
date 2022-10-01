@@ -51,6 +51,7 @@ body{
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  background-color: black;
 }
 .main{
 padding: .5em;
@@ -58,4 +59,61 @@ background-color: aquamarine;
 display: flex;
 align-self: flex-start;
 margin: 2em;
+}
+.time-main{
+  position: relative;
+  color:  hsl(345, 95%, 68%);
+  height: 100px;
+  border-radius: .2em;
+  font-size: 5rem;
+  background-color: hsl(236, 21%, 26%);
+width: 100px;
+text-align: center;
+padding: .2em;
+overflow: hidden;
+margin: 10px;
+
+&::after , &::before{
+  content: '';
+  background-color: black;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  position: absolute;
+  border-radius: .2em;
+} 
+&::after{
+  right: -5px;
+}
+&::before{
+  left:-5px;
+}
+.time-main > span{
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.top{
+  z-index: 3;
+  background-color: hsl(235, 16%, 14%);
+  transform-origin: 50% 100%;
+  position: absolute;
+}
+.bottom{
+  z-index: 1;
+  position: absolute;
+}
+.top-back,.bottom-back{
+  z-index: 2;
+  top: 0;
+  position: absolute;
+  height: 50%;
+}
+.top-back span,.bottom-back span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 }
