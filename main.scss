@@ -52,6 +52,7 @@ body{
   justify-content: space-between;
   flex-direction: column;
   background-color: black;
+  margin-top: 20em;
 }
 .main{
 padding: .5em;
@@ -67,7 +68,7 @@ margin: 2em;
   border-radius: .2em;
   font-size: 5rem;
   background-color: hsl(236, 21%, 26%);
-width: 100px;
+width: 200px;
 text-align: center;
 padding: .2em;
 overflow: hidden;
@@ -88,6 +89,7 @@ margin: 10px;
 &::before{
   left:-5px;
 }
+}
 .time-main > span{
   position: absolute;
   left: 0;
@@ -97,23 +99,37 @@ margin: 10px;
   z-index: 3;
   background-color: hsl(235, 16%, 14%);
   transform-origin: 50% 100%;
-  position: absolute;
+  transform: perspective(200px);
+  // position: absolute;
 }
 .bottom{
   z-index: 1;
-  position: absolute;
+  // position: absolute;
 }
-.top-back,.bottom-back{
+.bottom-back{
   z-index: 2;
   top: 0;
   position: absolute;
   height: 50%;
+  overflow: hidden;
 }
-.top-back span,.bottom-back span{
+.bottom-back span{
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  margin: auto;
 }
+.top, .top-back{
+  backface-visibility: hidden;
+  overflow: hidden;
+  height: 50%;
+}
+.top-back{
+  z-index: 4;
+  bottom: 0;
+  transform-origin: 50% 0;
+  transform: perspective(200px) rotate(180deg);
+
 }
