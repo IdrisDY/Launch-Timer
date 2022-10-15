@@ -29,6 +29,7 @@ setTimes()
 //  seconds === 0?mines.classList.add('rets'): mines.classList.remove('rets')
 // secs.classList.add('rets')
 function animeFlip(elem,val){
+  
   elem.querySelector('.top-back span').innerText = val
   elem.querySelector('.bottom-back span').innerText = val
 gsap.to(elem.querySelector('.top'),0.7,{
@@ -38,7 +39,8 @@ ease:CountQueuingStrategy.easeOut,
 onComplete:()=>{
   elem.querySelector('.top').innerText = val
   elem.querySelector('.bottom').innerText = val
-
+  gsap.set(elem.querySelector('.top'), {rotationX:0}
+  )
 }
 })
 
