@@ -23,7 +23,8 @@ function setTimes(){
   hrs.innerHTML = hours
   mines.innerHTML = minutes
   // secs.innerHTML = seconds
-  animeFlip(secs, seconds)
+   animeFlip(secs, seconds)
+  // animeFlip(mines, minutes)
 }
 setTimes()
 //  seconds === 0?mines.classList.add('rets'): mines.classList.remove('rets')
@@ -33,9 +34,9 @@ function animeFlip(elem,val){
   elem.querySelector('.top-back span').innerText = val
   elem.querySelector('.bottom-back span').innerText = val
 gsap.to(elem.querySelector('.top'),0.7,{
-rotationX:'-90deg',
+rotationX:'-180deg',
 transformPerspective:300,
-ease:CountQueuingStrategy.easeOut,
+ease:Quart.easeOut,
 onComplete:()=>{
   elem.querySelector('.top').innerText = val
   elem.querySelector('.bottom').innerText = val
@@ -43,7 +44,14 @@ onComplete:()=>{
   )
 }
 })
+gsap.to(elem.querySelector('.top-back'),0.7,{
+  rotationX:0,
+  transformPerspective:300,
+  ease:Quart.easeOut,
+  clearProps:'all'
 
+  })
+  
 }
 
  }
