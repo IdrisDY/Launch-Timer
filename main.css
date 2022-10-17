@@ -85,9 +85,8 @@ body {
   border-radius: 0.2em;
   font-size: 5rem;
   background-color: hsl(236deg, 21%, 26%);
-  width: 100%;
+  width: 100px;
   text-align: center;
-  padding: 0.2em;
   overflow: hidden;
   margin: 10px;
 }
@@ -122,8 +121,6 @@ body {
 
 .bottom {
   z-index: 1;
-  position: absolute;
-  bottom: 0;
 }
 
 .bottom::before {
@@ -140,7 +137,6 @@ body {
 .bottom-back {
   z-index: 2;
   top: 0;
-  position: absolute;
   height: 50%;
   overflow: hidden;
   background-color: hsl(236deg, 21%, 26%);
@@ -166,8 +162,8 @@ body {
   z-index: 4;
   bottom: 0;
   transform-origin: 50% 0;
-  transform: perspective(200px) rotate(180deg);
-  background-color: hsl(236deg, 21%, 26%);
+  transform: perspective(200px) rotateX(180deg);
+  background-color: hsl(235deg, 16%, 14%);
 }
 
 .top-back span {
@@ -175,6 +171,7 @@ body {
   margin: auto;
   position: absolute;
   left: 0;
+  right: 0;
 }
 
 .time-main .top::after, .time-main.bottom-back::after {

@@ -72,9 +72,9 @@ margin: 2em;
   border-radius: .2em;
   font-size: 5rem;
   background-color: hsl(236, 21%, 26%);
-width: 100%;
+width: 100px;
 text-align: center;
-padding: .2em;
+// padding: .2em;
 overflow: hidden;
 margin: 10px;
 
@@ -108,8 +108,8 @@ margin: 10px;
 }
 .bottom{
   z-index: 1;
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
+  // bottom: 0;
 
 }
 .bottom::before{
@@ -126,7 +126,7 @@ margin: 10px;
 .bottom-back{
   z-index: 2;
   top: 0;
-  position: absolute;
+  // position: absolute;
   height: 50%;
   overflow: hidden;
   background-color: hsl(236, 21%, 26%);
@@ -149,8 +149,8 @@ margin: 10px;
   z-index: 4;
   bottom: 0;
   transform-origin: 50% 0;
-  transform: perspective(200px) rotate(180deg);
-  background-color: hsl(236, 21%, 26%);
+  transform: perspective(200px) rotateX(180deg);
+  background-color: hsl(235, 16%, 14%);
 
 }
 .top-back span{
@@ -158,6 +158,7 @@ margin: 10px;
   margin: auto;
   position: absolute;
   left: 0;
+  right: 0;
 
 }
 .time-main .top::after, .time-main.bottom-back::after{
