@@ -1,5 +1,5 @@
 /* const mate  = new Date().toLocaleTimeString()
-the date is initiated as the page loads, putting it in afunction solves it being static
+the date is initiated as the page loads, putting it in a function solves it being static
 */
 const dayes = document.querySelector('.days')
 const hrs = document.querySelector('.hours')
@@ -19,27 +19,29 @@ function myTimer() {
    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 //  console.log(days,hours,minutes,seconds);
 function setTimes(){
-  dayes.innerHTML = days
-  hrs.innerHTML = hours
-  mines.innerHTML = minutes
-  // secs.innerHTML = seconds
    animeFlip(secs, seconds)
-  // animeFlip(mines, minutes)
+  animeFlip(mines, minutes)
+  animeFlip(dayes, days)
+  animeFlip(hrs, hours)
 }
 setTimes()
 //  seconds === 0?mines.classList.add('rets'): mines.classList.remove('rets')
 // secs.classList.add('rets')
 function animeFlip(elem,val){
-  
-  elem.querySelector('.top-back span').innerText = val
-  elem.querySelector('.bottom-back span').innerText = val
+  const backVal = elem.querySelector('.bottom').innerText
+  const currentVal = val < 10 ? `0${val}`: '' + val
+console.log(currentVal);
+  if (backVal === currentVal)return;
+
+  elem.querySelector('.top-back span').innerText =currentVal
+  elem.querySelector('.bottom-back span').innerText =currentVal
 gsap.to(elem.querySelector('.top'),0.7,{
 rotationX:'-180deg',
 transformPerspective:300,
 ease:Quart.easeOut,
 onComplete:()=>{
-  elem.querySelector('.top').innerText = val
-  elem.querySelector('.bottom').innerText = val
+  elem.querySelector('.top').innerText =currentVal
+  elem.querySelector('.bottom').innerText =currentVal
   gsap.set(elem.querySelector('.top'), {rotationX:0}
   )
 }

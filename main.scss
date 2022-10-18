@@ -1,80 +1,36 @@
-.card{
-   background-color: blue;
-   height: 100px;
-   width: 100px;
-   color: aliceblue; 
-   text-align: center;
-   border: 1px solid black;
-   transform-style: preserve-3d;
-   transform: rotateZ(-0deg);
-   transition: ease-in-out .3s;
-   display: table-cell;
-   vertical-align: middle;
-   &:after{
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 40px;
-    top:-.7em;
-    right: 0;
-    transform: rotate(0deg);
-    background-color: rgb(0, 34, 119);
-  
-   }
- }
- .card:hover{
-  transform:
-  rotate3d(1, 1, 0, 90deg);
- }
-.rets{
-  position: relative;
-  color: red;
-  animation: card 1s  linear infinite;
-  margin: 2em;
-
-}
-@keyframes card {
-   0%{
-    transform:
-    rotateX(60deg);
-    transform-style: preserve-3d;  
-  }
-  70%{
-    transform:none ;
-  }
-}
 body{
-  position: relative;
-  margin-left: 60px;
-  border: 1px solid blue;
-  perspective: 100px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: black;
-  margin-top: 20em;
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to top ,hsl(236, 21%, 26%),hsl(234, 17%, 12%) );
+
 }
-.main{
-padding: .5em;
-background-color: aquamarine;
-display: flex;
-align-self: flex-start;
-margin: 2em;
+footer{
+  background-image: url(./images/pattern-hills.svg) ;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  height: 40vh;
 }
 .count{
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: url(./images/bg-stars.svg);
 }
 .time-main{
   position: relative;
   color:  hsl(345, 95%, 68%);
   height: 100px;
-  border-radius: .2em;
+  border-radius: .1em;
   font-size: 5rem;
   background-color: hsl(236, 21%, 26%);
 width: 100px;
 text-align: center;
-// padding: .2em;
 overflow: hidden;
 margin: 10px;
 
@@ -101,7 +57,7 @@ margin: 10px;
 }
 .top{
   z-index: 3;
-  background-color: hsl(235, 16%, 14%);
+  background-color: hsl(236, 21%, 20%);
   transform-origin: 50% 100%;
   transform: perspective(200px);
   // position: absolute;
@@ -150,7 +106,7 @@ margin: 10px;
   bottom: 0;
   transform-origin: 50% 0;
   transform: perspective(200px) rotateX(180deg);
-  background-color: hsl(235, 16%, 14%);
+  background-color: hsl(236, 21%, 26%);
 
 }
 .top-back span{
