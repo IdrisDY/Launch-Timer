@@ -5,6 +5,7 @@ body {
   margin: 0;
   height: 100vh;
   background: linear-gradient(to top, hsl(236deg, 21%, 26%), hsl(234deg, 17%, 12%));
+  font-family: "Red Hat Text", sans-serif;
 }
 
 footer {
@@ -15,12 +16,43 @@ footer {
   height: 40vh;
 }
 
+main {
+  flex-direction: column;
+  gap: 0em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.time-text {
+  color: white;
+  display: flex;
+  width: 544px;
+  justify-content: space-evenly;
+}
+
+h1 {
+  font-size: 1.3rem;
+  color: white;
+  line-height: 0.5em;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+p {
+  width: 100px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}
+
 .count {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  height: 100%;
   background: url(./images/bg-stars.svg);
 }
 
@@ -35,15 +67,17 @@ footer {
   text-align: center;
   overflow: hidden;
   margin: 10px;
+  padding: 0 0.1em;
 }
 .time-main::after, .time-main::before {
   content: "";
   background-color: black;
   width: 15px;
   height: 15px;
-  top: 50%;
+  top: 43%;
   position: absolute;
   border-radius: 0.2em;
+  z-index: 9;
 }
 .time-main::after {
   right: -5px;
@@ -109,7 +143,7 @@ footer {
   bottom: 0;
   transform-origin: 50% 0;
   transform: perspective(200px) rotateX(180deg);
-  background-color: hsl(236deg, 21%, 26%);
+  background-color: hsl(236deg, 21%, 20%);
 }
 
 .top-back span {
@@ -129,4 +163,42 @@ footer {
   border-bottom: 1px solid black;
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 600px) {
+  body, main {
+    overflow: hidden;
+  }
+  .time-main {
+    width: 50px;
+    height: 50px;
+    font-size: 2.7rem;
+    margin: 0;
+  }
+  .time-main::after, .time-main::before {
+    width: 7px;
+    height: 7px;
+  }
+  .count {
+    justify-content: space-evenly;
+    gap: 0;
+    width: 80%;
+    margin: auto;
+  }
+  .time-text {
+    width: 80%;
+    margin: auto;
+    font-size: 0.5rem;
+    font-weight: lighter;
+  }
+  h1 {
+    max-width: 80%;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1em;
+  }
+  main {
+    justify-content: center;
+    gap: 4em;
+  }
 }/*# sourceMappingURL=main.css.map */
