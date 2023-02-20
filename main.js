@@ -2,7 +2,7 @@ const dayes = document.querySelector('.days')
 const hrs = document.querySelector('.hours')
 const mines = document.querySelector('.mins')
 const secs = document.querySelector('.secs') 
-const newd  = new Date("Jan 1, 2023 00:00:00").getTime()
+const newd  = new Date("Jan 1, 2024 00:00:00").getTime()
 
 setInterval(()=> myTimer(),
 1000)
